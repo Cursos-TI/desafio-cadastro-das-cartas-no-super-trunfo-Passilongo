@@ -9,12 +9,10 @@
 int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    char nome[50], estado[50];
-    int num_ponto_turistico, cod_cidade;
-    float area, pib, populacao, pib_capita, densidade;
-    
+    char nome[40], estado[50];
+    int num_ponto_turistico, cod_cidade, populacao;
+    float area, pib, pib_capita, densidade;
    
-
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
@@ -30,7 +28,7 @@ int main() {
     scanf("%s", &nome);
 
     printf("Quantidade de Habitantes: ");
-    scanf("%f", &populacao);
+    scanf("%d", &populacao);
     
     printf("Digite a area geométrica: ");
     scanf("%f", &area);
@@ -40,18 +38,21 @@ int main() {
 
     printf("Digite o número de pontos turisticos: ");
     scanf("%d", &num_ponto_turistico);
-    
+
+    densidade = (float) populacao / area;
+    pib_capita = (float) pib / populacao;
+
     //Exibição dos resultatods
     printf("\n** RESULTADO ** \n");
     printf("Estado: %s \n", estado);
-    printf("O código da carta: %s0%d \n", estado, cod_cidade);
+    printf("Codigo: %s%02d \n", estado, cod_cidade);
     printf("Nome da cidade: %s \n", nome);
-    printf("População: %.2f habitantes \n", populacao);
-    printf("Área: %.3f km² \n", area);
-    printf("Densidade Populacional: %.2f\n", densidade = populacao/area);
-    printf("PIB: %f bilhões de reais \n", pib);
-    printf("PIB per capita: %.2f\n", pib_capita = pib / populacao);
+    printf("População: %d habitantes \n", populacao);
+    printf("Área: %.2f km² \n", area);
+    printf("PIB: %.2f bilhões de reais \n", pib);
     printf("Número de pontos turísticos: %d \n", num_ponto_turistico);
+    printf("Densidade Populacional: %.2f hab/km²\n", densidade);
+    printf("PIB per Capita: %.2f reais\n", pib_capita);
     printf("\n** CARTA REGISTRADA COM SUCESSO ** \n");
      
     // Exibição dos Dados das Cartas:
