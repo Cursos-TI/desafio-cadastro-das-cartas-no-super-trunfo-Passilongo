@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
@@ -9,7 +10,8 @@
 int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    char nome1[40], estado1[4], nome2[50], estado2[4];
+
+    char nome1[50], estado1[4], nome2[50], estado2[4];
     int num_ponto_turistico1, cod_cidade1, populacao1;
     int num_ponto_turistico2, cod_cidade2, populacao2;
     float area1, pib1, pib_capita1, densidade1;
@@ -21,25 +23,32 @@ int main() {
     printf("** CARTA 1 ** \n\n");
 
     printf("Digite o Estado de A a H: ");
-    scanf("%s", &estado1);
+    fgets(estado1, sizeof(estado1), stdin);
+    estado1[strcspn(estado1, "\n")] = 0;
 
     printf("Codigo da cidade de 01 a 04: ");
     scanf("%d", &cod_cidade1);
+    getchar();
 
     printf("Nome da cidade: ");
-    scanf("%s", &nome1);
+    fgets(nome1, sizeof(nome1), stdin);
+    nome1[strcspn(nome1, "\n")] = 0;
 
     printf("Quantidade de Habitantes: ");
     scanf("%d", &populacao1);
+    getchar();
     
     printf("Digite a area geométrica: ");
     scanf("%f", &area1);
+    getchar();
 
     printf("Digite o PIB: ");
     scanf("%f", &pib1);
+    getchar();
 
     printf("Digite o número de pontos turisticos: ");
     scanf("%d", &num_ponto_turistico1);
+    getchar();
 
     densidade1 = (float) populacao1 / area1;
     pib_capita1 = (float) (pib1 * 1000000000) / populacao1;
@@ -50,25 +59,32 @@ int main() {
     printf("** CARTA 2 ** \n\n");
 
     printf("Digite o Estado de A a H: ");
-    scanf("%s", &estado2);
+    fgets(estado2, sizeof(estado2), stdin);
+    estado2[strcspn(estado2, "\n")] = 0;
 
     printf("Codigo da cidade de 01 a 04: ");
     scanf("%d", &cod_cidade2);
+    getchar();
 
     printf("Nome da cidade: ");
-    scanf("%s", &nome2);
+    fgets(nome2, sizeof(nome2), stdin);
+    nome2[strcspn(nome2, "\n")] = 0;
 
     printf("Quantidade de Habitantes: ");
     scanf("%d", &populacao2);
-    
+    getchar();
+
     printf("Digite a area geométrica: ");
     scanf("%f", &area2);
+    getchar();
 
     printf("Digite o PIB: ");
     scanf("%f", &pib2);
+    getchar();
 
     printf("Digite o número de pontos turisticos: ");
     scanf("%d", &num_ponto_turistico2);
+    getchar();
 
     densidade2 = (float) populacao2 / area2;
     pib_capita2 = (float) (pib2 * 1000000000) / populacao2;
